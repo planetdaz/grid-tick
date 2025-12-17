@@ -49,7 +49,40 @@ To ensure smooth, high-frame-rate animation (30+ FPS) across all 24 screens, the
 
 ---
 
-## 3. Wiring Logic (Per 4-Screen Cluster)
+## 3. Recommended Hardware Components
+
+### 3.1 Display Modules
+
+- **1.28" Round LCD Display (GC9A01)**
+  - [YELUFT 1.28" Round LCD Display with ESP32 Interface](https://www.amazon.com/YELUFT-Interface-Self-Luminous-Raspberry-Pre-Soldered/dp/B0F21J42WD/ref=sr_1_4?crid=FXMYC5XBF61A&keywords=round%2Besp32%2Bdisplay&qid=1765998920&sprefix=round%2Besp32%2Caps%2C126&sr=8-4&th=1)
+  - 240×240 resolution, SPI interface, pre-soldered headers
+  - Quantity needed: 24 units
+
+### 3.2 Microcontrollers
+
+- **ESP32-S3 Development Boards**
+  - Look for boards with 8MB PSRAM for optimal performance
+  - Quantity needed: 7 units (1 primary master + 6 sub-masters)
+
+### 3.3 Power Supply
+
+- **5V 10A Power Supply**
+  - Recommended: Regulated switching power supply with at least 50W capacity
+  - Include 470µF capacitors for each 4-screen cluster (6 total)
+
+### 3.4 Additional Components
+
+- **Wiring & Connectors**
+  - Dupont jumper wires for prototyping
+  - JST connectors for permanent installations
+  - 22-24 AWG wire for power distribution
+
+- **Optional: RS485 Modules** (if using wired backbone instead of ESP-NOW)
+  - MAX485 or similar TTL-to-RS485 converter modules
+
+---
+
+## 4. Wiring Logic (Per 4-Screen Cluster)
 
 Each ESP32-S3 drives 4 screens without multiplexing by utilizing abundant GPIOs and shared SPI lines.
 
